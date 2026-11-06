@@ -12,6 +12,9 @@
 
 [cryfs]
 name=CryFS 1.0.3 RPM (el8.x 8.0-8.5 & el9, x86_64)
+# 发布地址用 GitHub Pages 项目页（cryfs-rpm 仓库未设自定义域名，与博客域名隔离）。
+# 若你在仓库 Settings → Pages 误填了博客域名作为自定义域名，会出现
+# github.io 301 跳博客域名 + 博客 404 的撞车，务必清空 Custom domain。
 baseurl=https://lmnmbmk2023.github.io/cryfs-rpm/centos8.5
 enabled=1
 gpgcheck=1
