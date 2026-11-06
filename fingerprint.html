@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>CryFS 1.0.3 RPM 签名公钥指纹公示</title>
+<style>body{font-family:system-ui,Segoe UI,Arial;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.6}
+code{background:#f4f4f4;padding:.15em .4em;border-radius:4px;font-size:1.05em}
+h1{font-size:1.4rem}.fp{font-size:1.3rem;letter-spacing:1px;color:#b00;font-weight:700}
+.warn{background:#fff7e6;border-left:4px solid #fa8;padding:.8rem 1rem;margin:1rem 0}
+footer{color:#888;font-size:.85rem;margin-top:2rem}</style></head>
+<body>
+<h1>CryFS 1.0.3 RPM 签名公钥 · 指纹公示</h1>
+<p>本页为「随包公钥」之外的<strong>独立核对渠道</strong>。请在目标机用下方命令自行比对指纹，<strong>不要盲信随包文件</strong>。</p>
+<p class="fp">5926 7E53 EBD4 5672 122B 2CAF DA54 1775 AED8 69BF</p>
+<ul>
+<li>Key ID（长）：59267E53EBD45672122B2CAFDA541775AED869BF</li>
+<li>UID：CryFS 1.0.3 RPM Build (local) <cryfs-rpm@localhost.invalid></li>
+<li>算法 / 长度：RSA 4096（Header V4 RSA/SHA256 签名）</li>
+<li>有效期：2 年（自 2026-11-06 起，至 2028-11 前后）</li>
+</ul>
+<div class="warn"><strong>诚实口径：</strong>签名只证明「持私钥者签过此包」，<em>不证明构建可复现</em>（源码来自上游 tag 1.0.3）。私钥以文件落盘在构建宿主机，未进任何发布物。</div>
+<h2>如何在目标机核对</h2>
+<pre><code>gpg --with-fingerprint RPM-GPG-KEY-cryfs-1.0.3.asc
+# 期望输出含：Key fingerprint = 5926 7E53 EBD4 5672 122B 2CAF DA54 1775 AED8 69BF</code></pre>
+<footer>本页由 gen_fingerprint_page.sh 生成 · 生成于 2026-11-06</footer>
+</body></html>
