@@ -1,7 +1,7 @@
 [cryfs]
 name=CryFS 1.0.3 RPM (el8.5 + el9)
-baseurl=https://<你的GitHub用户名>.github.io/cryfs-rpm/centos8.5
+baseurl=https://lmnmbmk2023.github.io/cryfs-rpm/centos8.5
 enabled=1
 gpgcheck=1
-gpgkey=https://<你的GitHub用户名>.github.io/cryfs-rpm/centos8.5/RPM-GPG-KEY-cryfs-1.0.3.asc
+gpgkey=https://lmnmbmk2023.github.io/cryfs-rpm/centos8.5/RPM-GPG-KEY-cryfs-1.0.3.asc
 repo_gpgcheck=1

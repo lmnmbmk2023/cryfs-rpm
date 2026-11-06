@@ -8,7 +8,7 @@ CryFS 1.0.3 签名 RPM 仓库（el8.5 + el9），通过 GitHub Pages 分发。
 
 ## 使用
 \`\`\`bash
-sudo dnf config-manager --add-repo https://<你的GitHub用户名>.github.io/cryfs-rpm/cryfs.repo
+sudo dnf config-manager --add-repo https://lmnmbmk2023.github.io/cryfs-rpm/cryfs.repo
 sudo dnf install cryfs
 \`\`\`
 
