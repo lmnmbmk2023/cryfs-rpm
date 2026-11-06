@@ -1,5 +1,17 @@
+# CryFS 1.0.3 软件仓库客户端配置
+#
+# 兼容系统（实测）：
+#   ✅ el8 全系：CentOS 8.0–8.5 / Stream 8 / Rocky Linux 8 / AlmaLinux 8（glibc 2.28，原生）
+#   ✅ el9 全系：CentOS Stream 9 / Rocky Linux 9 / AlmaLinux 9 / RHEL 9 系（glibc 2.34，向后兼容，仅多需 fuse-libs）
+#   ❌ el7 及更早（glibc 2.17 < 要求的 2.28，不可运行；且已 EOL）
+#   ❌ 非 RPM 系 / 非 x86_64（不交付 DEB 等）
+#
+# 目录名 centos8.5 只是「构建基线」标签（在 CentOS 8.5 上编译），
+# 不代表只支持 8.5——同一目录同时服务 el8 与 el9。
+# 证据：docs/CentOS全系适配与GLIBC结论-2026-11-06.md（含 Docker 真装日志）
+
 [cryfs]
-name=CryFS 1.0.3 RPM (el8.5 + el9)
+name=CryFS 1.0.3 RPM (el8.x 8.0-8.5 & el9, x86_64)
 baseurl=https://lmnmbmk2023.github.io/cryfs-rpm/centos8.5
 enabled=1
 gpgcheck=1

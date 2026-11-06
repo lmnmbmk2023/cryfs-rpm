@@ -1,8 +1,9 @@
 # 仓库文件清单与说明（FILES.md）
 
 CryFS 1.0.3 签名 RPM 仓库，通过 GitHub Pages 分发。
-覆盖范围：**CentOS / RHEL 8.5+ 与 Rocky / Alma 9**（同一 `centos8.5/` 目录同时服务这两类系统）。
-**不包括** el8.2 及更早（设计内已知限制，详见发布文档）。
+覆盖范围：**el8 全系（CentOS 8.0–8.5 / Stream 8 / Rocky 8 / Alma 8）与 el9 全系（Rocky 9 / Alma 9 / RHEL 9 / Stream 9）**，均为 x86_64。
+同一 `centos8.5/` 目录同时服务这两大类系统（产物最高只要求 `GLIBC_2.28`，el9 的 2.34 向后兼容）。
+**不支持** el7 及更早（glibc 2.17 < 2.28，且已 EOL）与非 RPM / 非 x86_64 平台。
 
 ---
 
