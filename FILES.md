@@ -12,7 +12,8 @@ CryFS 1.0.3 签名 RPM 仓库，通过 GitHub Pages 分发。
 | 文件 | 大小 | 说明 |
 |---|---|---|
 | `README.md` | 1.0K | 仓库总说明：用途、客户端使用命令、信任模型（同站页与 keyserver 冲突以 keyserver 为准）。 |
-| `cryfs.repo` | 1.0K | dnf/yum 客户端配置。`baseurl` 与 `gpgkey` 已指向本 Pages 站点，用户 `dnf config-manager --add-repo` 即可用。 |
+| `index.html` | 8.0K | **站点首页**（GitHub Pages 自定义域名服务在根路径，裸域名 `cryfs-rpm.7234.cc.cd/` 直接访问返回本页，解决裸域名 404）。含一键安装命令、指纹核对指引、兼容矩阵。 |
+| `cryfs.repo` | 1.0K | dnf/yum 客户端配置。`baseurl`/`gpgkey` 指向本站点根路径；`gpgcheck=1` 保留（包级签名已签），`repo_gpgcheck=0`（未对 repomd.xml 单独签名）。 |
 | `fingerprint.html` | 8.0K | GPG 公钥指纹公示页（独立核对渠道之一），含完整指纹 `5926 7E53 … AED8 69BF`、Key ID、UID、有效期。 |
 | `.nojekyll` | 0 | 告诉 GitHub Pages 不要用 Jekyll 处理站点，避免 RPM / 二进制被忽略或错误处理。 |
 | `.gitignore` | 1.0K | 忽略本地 `PUSH.txt` 备忘，防止误入公开仓库。 |

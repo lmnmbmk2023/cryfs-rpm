@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CryFS 1.0.3 签名 RPM 仓库</title>
+  <style>
+    body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; max-width: 820px; margin: 2.5rem auto; padding: 0 1.2rem; line-height: 1.7; color: #1f2328; }
+    h1 { font-size: 1.6rem; border-bottom: 2px solid #355cc7; padding-bottom: .4rem; }
+    code { background: #f2f3f5; padding: .15em .4em; border-radius: 4px; font-size: .92em; }
+    pre { background: #0d1117; color: #e6edf3; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    a { color: #355cc7; } .ok { color: #1a7f37; font-weight: 600; }
+    .note { background: #fff8e6; border-left: 4px solid #d4a017; padding: .6rem 1rem; border-radius: 4px; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #d0d7de; padding: .5rem .7rem; text-align: left; }
+    th { background: #f6f8fa; }
+  </style>
+</head>
+<body>
+  <h1>CryFS 1.0.3 签名 RPM 仓库</h1>
+
+  <p>本仓库通过 GitHub Pages 分发 <strong>CryFS 1.0.3</strong> 的 GPG 签名 RPM，面向
+  <strong>el8 全系（8.0–8.5 / Stream 8 / Rocky 8 / Alma 8）</strong> 与
+  <strong>el9 全系（Stream 9 / Rocky 9 / Alma 9 / RHEL 9）</strong>，x86_64。</p>
+
+  <h2>一键安装</h2>
+  <pre>sudo dnf config-manager --add-repo https://cryfs-rpm.7234.cc.cd/cryfs.repo
+sudo dnf install cryfs
+cryfs --version        # 期望 1.0.3；gpgcheck=1 自动验签，签名不对会拒装
+# el9 若提示缺 FUSE2 运行时：sudo dnf install fuse-libs</pre>
+
+  <h2>信任与指纹核对（安全关键）</h2>
+  <p>签名仅证明「持私钥者签过此包」，不证明构建可复现。请在安装前核对 GPG 指纹：</p>
+  <pre>curl -sS -O https://cryfs-rpm.7234.cc.cd/centos8.5/RPM-GPG-KEY-cryfs-1.0.3.asc
+gpg --with-fingerprint RPM-GPG-KEY-cryfs-1.0.3.asc
+# 期望指纹：5926 7E53 EBD4 5672 122B  2CAF DA54 1775 AED8 69BF</pre>
+  <ul>
+    <li>独立公示页：<a href="fingerprint.html">fingerprint.html</a></li>
+    <li>密钥服务器（独立渠道）：<code>keys.openpgp.org</code>，Key ID <code>DA541775AED869BF</code></li>
+    <li class="note">若本页指纹与密钥服务器不一致，<strong>以密钥服务器为准</strong>。</li>
+  </ul>
+
+  <h2>兼容系统版本（实测）</h2>
+  <table>
+    <tr><th>系统</th><th>状态</th><th>说明</th></tr>
+    <tr><td>CentOS 8.0–8.5 / Stream 8 / Rocky 8 / Alma 8</td><td class="ok">✅ 原生</td><td>glibc 2.28，与构建基线一致</td></tr>
+    <tr><td>CentOS Stream 9 / Rocky 9 / Alma 9 / RHEL 9</td><td class="ok">✅ 兼容</td><td>glibc 2.34 向后兼容，仅多需 <code>fuse-libs</code></td></tr>
+    <tr><td>CentOS 7 / RHEL 7 及更早</td><td>❌ 不支持</td><td>glibc 2.17 &lt; 要求的 2.28，且已 EOL</td></tr>
+    <tr><td>非 RPM 系 / 非 x86_64</td><td>❌ 不交付</td><td>仅提供 x86_64 RPM</td></tr>
+  </table>
+
+  <h2>仓库内容</h2>
+  <ul>
+    <li><a href="FILES.md">FILES.md</a> — 文件清单与说明</li>
+    <li><a href="cryfs.repo">cryfs.repo</a> — dnf/yum 客户端配置</li>
+    <li><a href="centos8.5/repodata/repomd.xml">repodata/repomd.xml</a> — 仓库元数据索引</li>
+  </ul>
+
+  <p style="color:#57606a;font-size:.85rem;margin-top:2rem">
+    公钥指纹来源：本仓库自身密钥 + 密钥服务器交叉核对。本站点与博客
+    <code>7234.cc.cd</code> 同域不同子域，彼此隔离。
+  </p>
+</body>
+</html>

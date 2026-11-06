@@ -22,4 +22,6 @@ baseurl=https://cryfs-rpm.7234.cc.cd/centos8.5
 enabled=1
 gpgcheck=1
 gpgkey=https://cryfs-rpm.7234.cc.cd/centos8.5/RPM-GPG-KEY-cryfs-1.0.3.asc
-repo_gpgcheck=1
+# repo_gpgcheck=0：本仓库未对 repomd.xml 单独签名（只签了 RPM 包本身）。
+# 包级 gpgcheck=1 已能对实际安装的 RPM 做签名校验，这是供应链安全的关键防线；
+# 若日后用 createrepo_c --sign 生成 repomd.xml.asc，可再改回 1。
