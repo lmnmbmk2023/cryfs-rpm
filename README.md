@@ -23,7 +23,7 @@ CryFS 1.0.3 签名 RPM 仓库，通过 GitHub Pages 分发。
 
 ## 使用
 \`\`\`bash
-sudo dnf config-manager --add-repo https://lmnmbmk2023.github.io/cryfs-rpm/cryfs.repo
+sudo dnf config-manager --add-repo https://cryfs-rpm.7234.cc.cd/cryfs.repo
 sudo dnf install cryfs
 # el9 若提示缺 FUSE 2 运行时，补一句：
 # sudo dnf install fuse-libs
